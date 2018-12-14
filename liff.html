@@ -15,6 +15,9 @@
             var s = location.search;
             var userId=null;
 	    var targetParam = s.replace(/\?/, "");
+		$("#test").text(targetParam);
+		targetParam = s.replace(/\?msq_seq=/, "");
+		$("#test").text($("#test").text()+.......targetParam);
             var targetUrlEnc = s.replace(/\?target=/, "");
             var targetUrlDec = decodeURIComponent(targetUrlEnc);
             $('#paras').text(url + "<br>" +s);
@@ -71,7 +74,7 @@
 </head>
 
 <body>
-	<div style="height:300px"></div>
+	<div id="test" style="height:300px"></div>
     <center><img src="https://i.imgur.com/seuaOqf.gif?1"/></center>
 </body>
 
