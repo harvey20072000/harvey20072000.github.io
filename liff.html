@@ -32,12 +32,22 @@
             }
 
             liff.init(init, initerr);
+		/*
 			setTimeout(function(){ 
 					$.ajax({
-					    url: 'https://dev.mindcraft.com.tw:51000/open_url/line?target='+targetUrlEnc+'&userId='+userId,
+					    url: 'https://dev.mindcraft.com.tw:51000/open_url_sf/line?target='+targetUrlEnc+'&userId='+userId,
 					    type: 'GET'
 					  });
 				 }, 300);
+				 */
+		/*
+			setTimeout(function(){ 
+					$.ajax({
+					    url: 'https://dev.mindcraft.com.tw:51000/open_url_sf/line?userId='+userId+'&'+s,
+					    type: 'GET'
+					  });
+				 }, 300);
+				 */
 			setTimeout(function(){
 				/*
 				liff.openWindow({
@@ -51,7 +61,7 @@
 					history.go(-Backlen);
   					window.location.href=targetUrlDec;
   					*/
-  					
+  					targetUrlDec = 'https://dev.mindcraft.com.tw:51000/open_url_sf/line?userId='+userId+'&'+s;
   					location.replace(targetUrlDec);
 				 }, 1500);
 				 //alert((targetUrlDec));
