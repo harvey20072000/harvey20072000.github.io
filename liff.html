@@ -14,7 +14,7 @@
             var url = new URL(url_string);
             var s = location.search;
             var userId=null;
-            var targetUrlEnc = s.replace(/\?target=/, "");
+            var targetUrlEnc = s.replace(/\?/, "");
             var targetUrlDec = decodeURIComponent(targetUrlEnc);
             $('#paras').text(url + "<br>" +s);
             var init = function (data) {
