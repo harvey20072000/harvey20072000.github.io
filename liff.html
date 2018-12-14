@@ -61,7 +61,7 @@
 					history.go(-Backlen);
   					window.location.href=targetUrlDec;
   					*/
-  					targetUrlDec = 'https://dev.mindcraft.com.tw:51000/open_url_sf/line?userId='+userId+'&'+s;
+  					targetUrlDec = 'https://dev.mindcraft.com.tw:51000/open_url_sf/line?userId='+userId+'&'+s.replace("?", "");
   					location.replace(targetUrlDec);
 				 }, 1500);
 				 //alert((targetUrlDec));
