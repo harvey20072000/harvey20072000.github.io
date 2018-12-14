@@ -15,9 +15,6 @@
             var s = location.search;
             var userId=null;
 	    var targetParam = s.replace(/\?/, "");
-		$("#test").text(targetParam);
-		targetParam = s.replace(/\?msq_seq=/, "");
-		$("#test").text($("#test").text()+"......."+targetParam);
             var targetUrlEnc = s.replace(/\?target=/, "");
             var targetUrlDec = decodeURIComponent(targetUrlEnc);
             $('#paras').text(url + "<br>" +s);
@@ -65,11 +62,9 @@
 					history.go(-Backlen);
   					window.location.href=targetUrlDec;
   					*/
-				/*
   					targetUrlDec = 'https://dev.mindcraft.com.tw:51000/open_url_sf/line?userId='+userId+'&'+targetParam;
   					location.replace(targetUrlDec);
-					*/
-				 }, 1500);
+				 }, 1000);
 				 //alert((targetUrlDec));
         })
     </script>
