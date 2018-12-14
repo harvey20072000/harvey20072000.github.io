@@ -14,7 +14,7 @@
             var url = new URL(url_string);
             var s = location.search;
             var userId=null;
-	    var targetParam = s.replace(/\?/, "");
+	    var targetParam = s.replace(/\?id=/, "");
             var targetUrlEnc = s.replace(/\?target=/, "");
             var targetUrlDec = decodeURIComponent(targetUrlEnc);
             $('#paras').text(url + "<br>" +s);
@@ -62,7 +62,7 @@
 					history.go(-Backlen);
   					window.location.href=targetUrlDec;
   					*/
-  					targetUrlDec = 'https://dev.mindcraft.com.tw:51000/open_url_sf/line?userId='+userId+'&'+targetParam;
+  					targetUrlDec = 'https://dev.mindcraft.com.tw:51000/open_url_sf/line?userId='+userId+'&msg_seq='+targetParam;
   					location.replace(targetUrlDec);
 				 }, 1000);
 				 //alert((targetUrlDec));
