@@ -8,11 +8,12 @@
         $(document).ready(function () {
           setTimeout(function(){
                 alert("closing");
-                window.close();
+                $("#test").click();
              }, 600);
         })
     </script>
   </head>
   <body>
+    <div style="display:none;"><a id="test" href="javascript:window.open('','_self').close();">close</a></div>
   </body>
 </html>
