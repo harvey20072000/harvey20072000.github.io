@@ -77,7 +77,8 @@ $(function() {
         // Run the compare function
         var results = compare(userChoice, computerChoice);
         // Display results
-        $target.find('.game').append("<br><hr><br>" + results);
+        $target.find('.game').append("<br>--------------------<br>" + results);
+		$target.find('.game').append("<hr>");
     });
     $button.appendTo($target);
     $('<div class="game"></div>').appendTo($target);
