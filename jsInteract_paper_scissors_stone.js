@@ -1,4 +1,20 @@
 $(function() {
+    /*
+	$('<link>')
+  .appendTo('head')
+  .attr({
+      type: 'text/css', 
+      rel: 'stylesheet',
+      href: 'css/jsInteract_paper_scissors_stone.css'
+  });
+	*/
+    $('<link>')
+        .appendTo('head')
+        .attr({
+            type: 'text/css',
+            rel: 'stylesheet',
+            href: 'https://harvey20072000.github.io/{0}'.format('jsInteract_paper_scissors_stone.css') //TODO this url is for test only
+        });
 
     let $target = $('#footer_jsInteract .interactZone');
     $('<h1>Rock, Paper, Scissors</h1>').appendTo($target);
