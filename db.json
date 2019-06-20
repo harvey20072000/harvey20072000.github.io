@@ -1,1 +1,84 @@
-{"events":[{"replyToken":"nHuyWiB7yP5Zw52FIkcQobQuGDXCTA","type":"message","timestamp":1462629479859,"source":{"type":"user","userId":"U988f600a4ac27e29e4176556f4812a43"},"message":{"id":"325708","type":"text","text":"MOVIE_1"}}]}
+{
+  "title": "Harvey Liu's Blog",
+  "logo": {
+    "html": "<h1><a href=\"index.html\">Harvey Liu's Blog</a></h1><p>Enjoy life. Be free.</p>"
+  },
+  "navigations": [
+    {
+      "name": "個人簡介",
+      "linkTarget": "myInfo.html",
+      "isPublic": true
+    },
+    {
+      "name": "ＩＴ學習",
+      "linkTarget": "coding.html",
+      "isPublic": true
+    },
+    {
+      "name": "文章心得",
+      "linkTarget": "articleReview.html",
+      "isPublic": true
+    },
+    {
+      "name": "察狿觀社",
+      "linkTarget": "observation.html",
+      "isPublic": true
+    },
+    {
+      "name": "投資隨筆",
+      "linkTarget": "investment.html",
+      "isPublic": true
+    },
+    {
+      "name": "娛樂札記",
+      "linkTarget": "entertainment.html",
+      "isPublic": true
+    }
+  ],
+  "footers": {
+    "contactMe": [
+      {
+        "channel": "Email",
+        "linkTarget": "mailto:harvey20072000@gmail.com",
+        "isPublic": true
+      },
+      {
+        "channel": "Facebook",
+        "linkTarget": "https://www.facebook.com/harvey20072000",
+        "isPublic": true
+      },
+      {
+        "channel": "GitHub",
+        "linkTarget": "https://github.com/harvey20072000/harvey20072000.github.io",
+        "isPublic": false
+      }
+    ],
+    "codingFriends": [
+      {
+        "name": "Matthew Sah",
+        "note": "薩百鄰；立華；",
+        "linkTarget": "http://matthewsah.top/",
+        "isPublic": true
+      },
+      {
+        "name": "High Wall",
+        "note": "高強；立華；",
+        "linkTarget": "#",
+        "isPublic": false
+      },
+      {
+        "name": "Vince Lee",
+        "note": "李國安；經緯、立華；一輩子的師傅",
+        "linkTarget": "#",
+        "isPublic": false
+      },
+      {
+        "name": "Jason Chen",
+        "note": "陳冠霖；台大新生書院；",
+        "linkTarget": "http://kuanlin.me",
+        "isPublic": true
+      }
+    ],
+    "jsInteract": []
+  }
+}
