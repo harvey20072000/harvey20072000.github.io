@@ -11,10 +11,6 @@ $(function() {
         return s;
     };
 	
-	$.getScript('https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js', function() {
-	    console.log("Script moment.min.js loaded."); 
-	});
-	
     $.ajax({
         url: "resource/commons.json",
         //url: "https://harvey20072000.github.io/db.json", //TODO this url is for test only
