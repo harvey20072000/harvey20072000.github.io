@@ -1,0 +1,24 @@
+{
+  "articleReview": [
+    {
+      "id": "articleReview_0002",
+      "name": "斜槓時代高效讀書法",
+      "url": "https://www.evernote.com/shard/s721/sh/660b8635-67c3-42fe-b207-2a8234007f07/cc77a33a36a4fd1c734b7f1bd6b689bc",
+      "date": "201906201810"
+    },
+    {
+      "id": "articleReview_0001",
+      "name": "斑馬驅蟲",
+      "url": "https://www.evernote.com/shard/s721/sh/a2cb71f5-a727-486e-a6e9-7b6e6640cbf8/f540e89e48104d223fc0cd7cec16ca4b",
+      "date": "201906201222"
+    }
+  ],
+  "coding": [
+    {
+      "id": "coding_0001",
+      "name": "Aws Fargate",
+      "url": "https://www.evernote.com/shard/s721/sh/8f230b4a-1177-4093-b929-41b34691125f/2bdca4613e7d959918a059c0580e9e0c",
+      "date": "201906201930"
+    }
+  ]
+}

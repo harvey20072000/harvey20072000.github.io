@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+p {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+
+div {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+
+font {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+
+span {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+
+body {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+
+b {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+
+li {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+
+strong {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+
+h1 {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+h2 {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+h3 {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+h4 {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+h5 {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
+h6 {
+	font-family: 'cwTeXYen',Arial,sans-serif;
+}
