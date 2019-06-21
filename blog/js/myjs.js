@@ -122,7 +122,7 @@ function doLoadArticles(target,data){
 		let eachArticle = targetArticles[i];
 		let $ul = $('#articles .articleColumn:eq({0}) ul'.format(i % 6));
 		let articleTime = moment(eachArticle['date'], "YYYYMMDDHHmm").format('MMM DD HH:mm');
-		let $li = $('<li><p class="date"><b>{0}</b></p><p><a target="_blank" href="{1}"><b>{2}</b></a></p></li>'.format(articleTime,eachArticle['url'],eachArticle['name']))
+		let $li = $('<li><p class="date"><b>{0}</b></p><p><a target="_blank" href="{1}"><b style="font-size:17px;">{2}</b></a></p></li>'.format(articleTime,eachArticle['url'],eachArticle['name']))
 		if($ul.find('li').length == 0){
 			$li.addClass('first');
 		}
