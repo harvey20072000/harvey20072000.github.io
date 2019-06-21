@@ -10,7 +10,11 @@ $(function() {
         }
         return s;
     };
-
+	
+	$.getScript('https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js', function() {
+	    console.log("Script moment.min.js loaded."); 
+	});
+	
     $.ajax({
         url: "resource/commons.json",
         //url: "https://harvey20072000.github.io/db.json", //TODO this url is for test only
@@ -37,7 +41,11 @@ function setCommonProps(data) {
     for (var i in data['navigations']) {
         let eachNav = data['navigations'][i];
         if (eachNav['isPublic']) {
-            $('<li><a href="{0}">{1}</a></li>'.format(eachNav['linkTarget'], eachNav['name'])).appendTo($ul);
+			let $li = $('<li><a href="{0}">{1}</a></li>'.format(eachNav['linkTarget'], eachNav['name']));
+			if(window.location.pathname.includes(eachNav['linkTarget'])){
+				$li.addClass('current_page_item');	
+			}
+            $li.appendTo($ul);
         }
     }
 
@@ -91,3 +99,37 @@ function setCommonProps(data) {
 }
 
 var all_jsInteracts = ['jsInteracts/paper_scissors_stone/index.html','jsInteract_paper_scissors_stone.js'];
+
+
+// article loader
+function loadArticles(target){
+	$.ajax({
+        url: "resource/acticles.json",
+        //url: "https://harvey20072000.github.io/db.json", //TODO this url is for test only
+        dataType: "json",
+        success: function(data) {
+            doLoadArticles(target,data);
+        },
+        error: function(data) {
+            alert('load acticles fail, please try again later (ˊ^ˋ)');
+        }
+    });
+}
+
+function doLoadArticles(target,data){
+	let targetArticles = data[target];
+	for(var i=0;i<6;i++){
+		$('#articles row').append('<div class="2u articleColumn"><section><ul class="style2"></ul></section></div>');	
+	}
+		
+	for(var i in targetArticles){
+		let eachArticle = targetArticles[i];
+		let $ul = $('#articles articleColumn:eq({0}) ul'.format(i % 6));
+		let articleTime = moment(eachArticle['date'], "YYYYMMDDHHmm").format('MMM DD HH:mm');
+		let $li = $('<li><p class="date"><b>{0}</b></p><p><a target="_blank" href="{1}"><b>{2}</b></a></p></li>'.format(articleTime,eachArticle['url'],eachArticle['name']))
+		if($ul.find('li').length == 0){
+			$li.addClass('first');
+		}
+		$ul.append($li);
+	}
+}
