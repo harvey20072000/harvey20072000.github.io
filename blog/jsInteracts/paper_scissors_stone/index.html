@@ -1,0 +1,193 @@
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<style>
+.gameZone, .fireworkZone{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+    margin: 0px;
+    /*overflow: hidden;*/
+}
+.fireworkZone {
+	background-color: #5c5c5c;
+	display:none;
+}
+.user{
+    position: absolute;
+    left: 40px;
+	top: 100px;
+	display:none;
+}
+.computer{
+    position: absolute;
+    left: 190px;
+	top: 100px;
+	display:none;
+}
+.winStreak{
+	position: absolute;
+    left: 140px;
+	top: 65px;
+	font-size: 30px;
+	font-family: Lucida Console;
+}
+.shakerWrapper{
+	display: none;
+}
+.selectDiv{
+	margin-left: 50px;
+}
+.selection{
+	cursor: pointer;
+}
+</style>
+<div class="gameZone">
+	<h1 title="Win computer 3 times in a row to get a surprise !">Paper, Scissors, Stone</h1><br>
+	<div class="selectDiv">
+		<img class="selection" onclick="gameProcess('paper')" src="images/paper.png"/>
+		<img class="selection" onclick="gameProcess('scissors')" src="images/scissors.png"/>
+		<img class="selection" onclick="gameProcess('stone')" src="images/stone.png"/>
+	</div>
+	<img class="user paper" src="images/paper.png"/>
+	<img class="user scissors" src="images/scissors.png"/>
+	<img class="user stone" src="images/stone.png"/>
+	<span class="shakerWrapper"><img class="user shaker" src="images/stone.png"/></span>
+	<img class="computer paper" src="images/paper.png"/>
+	<img class="computer scissors" src="images/scissors.png"/>
+	<img class="computer stone" src="images/stone.png"/>
+	<span class="shakerWrapper"><img class="computer shaker" src="images/stone.png"/></span>
+	<span class="winStreak">0</span>
+</div>
+<div id="fireworkZone" class="fireworkZone"></div>
+
+<script>
+$(function() {
+
+    String.prototype.format = String.prototype.f = function() {
+        var s = this,
+            i = arguments.length;
+
+        while (i--) {
+            s = s.replace(new RegExp('\\{' + i + '\\}', 'gm'), arguments[i]);
+        }
+        return s;
+    };
+	
+	$('.shaker').show();
+});
+
+function gameProcess(userChoice) {
+    // Computer choice
+    let computerChoice = Math.random();
+    if (computerChoice < 0.34) {
+        computerChoice = "stone";
+    } else if (computerChoice <= 0.67) {
+        computerChoice = "paper";
+    } else {
+        computerChoice = "scissors";
+    }
+	// Run the compare function
+    let result = compare(userChoice, computerChoice);
+	if(result > 0){
+		winStreak++;
+	}else if(result < 0){
+		winStreak = 0;
+	}
+	
+	// go animation
+    gameAnimation(userChoice,computerChoice);
+}
+
+var winStreak = 0,mousePos = null;
+
+// Compare user choice vs computer choice
+function compare(choice1, choice2) {
+        if (choice1 === choice2) {
+            return 0;
+        }
+        if (choice1 === "stone") {
+            if (choice2 === "scissors") {
+                // stone wins
+                return 1;
+            } else {
+                // paper wins
+                return -1;
+            }
+        }
+        if (choice1 === "paper") {
+            if (choice2 === "stone") {
+                // paper wins
+                return 1;
+            } else {
+                // scissors wins
+                return -1;
+            }
+        }
+        if (choice1 === "scissors") {
+            if (choice2 === "stone") {
+                // stone wins
+                return -1;
+            } else {
+                // scissors wins
+                return 1;
+            }
+        }
+    };
+
+function gameAnimation(userChoice,computerChoice,result){
+	// Show stone first. After vertical shake, show both choice
+	$(".selection").hide();
+	$(".shakerWrapper").show();
+	$(".shaker").effect( "shake", { direction: "up", times: 3, distance: 70}, 1000 );
+	setTimeout(function(){
+		$(".shakerWrapper").hide();
+	    $(".user."+userChoice).show();
+		$(".computer."+computerChoice).show();
+	},800);
+	// change win streak
+	setTimeout(function(){
+		$(".winStreak").fadeOut(300,function(){
+			$(".winStreak").text(winStreak);
+			$(".winStreak").fadeIn(300,function(){
+				let duration = 1000;
+				if(winStreak === 3){
+					winStreak = 0;
+					duration = 10000;
+					fireworkAnimation(duration);
+				}
+				// init game zone
+				setTimeout(function(){
+					init();
+				},duration);
+			});	
+		});
+	},1200);
+}
+
+function init(){
+	$(".winStreak").text(winStreak);
+	$(".shakerWrapper").hide();
+	$(".paper").hide();
+	$(".scissors").hide();
+	$(".stone").hide();
+	$(".selection").show();
+}
+
+function fireworkAnimation(durationInMs){
+	$('.fireworkZone').fadeIn(1500);
+	if(mousePos==null){
+	/*
+		$.getScript('firework_effect.js', function() {
+	        console.log("Script firework_effect loaded");
+	    });
+		*/
+		$.getScript('https://harvey20072000.github.io/firework_effect.js', function() { //TODO this url is for test only
+	        console.log("Script firework_effect loaded");
+	    });
+	}
+	setTimeout(function(){
+		$('.fireworkZone').fadeOut(1500);
+	},durationInMs-1500);
+	
+}
+</script>

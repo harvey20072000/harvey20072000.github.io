@@ -1,0 +1,53 @@
+#footer_jsInteract .interactZone{
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+#footer_jsInteract .interactZone::selection {
+	background: #fb9fe5;
+	text-shadow: none
+}
+
+#footer_jsInteract .interactZone a {
+	color: #0088CC;
+	text-decoration: none;
+	outline: 0
+}
+
+#footer_jsInteract .interactZone a:hover {
+	color: #005580
+}
+
+#footer_jsInteract .interactZone a img {
+	border: none
+}
+
+#footer_jsInteract .interactZone img {
+	max-width: 100%
+}
+
+#footer_jsInteract .interactZone html {
+	font-size: 100%
+}
+
+#footer_jsInteract .interactZone body {
+	padding: 5%;
+	font: 300 1.25em/1.6 monospace;
+	background: #fff;
+	color: #000;
+}
+
+#footer_jsInteract .interactZone h1 {
+	font-family: "Helvetica Neue", sans-serif;
+	line-height: 1;
+	font-weight: 300;
+	margin-bottom: 1em;
+}
+
+#footer_jsInteract .interactZone .game {
+	padding: 2em;
+	background: #eee;
+}
