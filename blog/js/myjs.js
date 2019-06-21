@@ -119,12 +119,12 @@ function loadArticles(target){
 function doLoadArticles(target,data){
 	let targetArticles = data[target];
 	for(var i=0;i<6;i++){
-		$('#articles row').append('<div class="2u articleColumn"><section><ul class="style2"></ul></section></div>');	
+		$('#articles .row').append('<div class="2u articleColumn"><section><ul class="style2"></ul></section></div>');	
 	}
 		
 	for(var i in targetArticles){
 		let eachArticle = targetArticles[i];
-		let $ul = $('#articles articleColumn:eq({0}) ul'.format(i % 6));
+		let $ul = $('#articles .articleColumn:eq({0}) ul'.format(i % 6));
 		let articleTime = moment(eachArticle['date'], "YYYYMMDDHHmm").format('MMM DD HH:mm');
 		let $li = $('<li><p class="date"><b>{0}</b></p><p><a target="_blank" href="{1}"><b>{2}</b></a></p></li>'.format(articleTime,eachArticle['url'],eachArticle['name']))
 		if($ul.find('li').length == 0){
