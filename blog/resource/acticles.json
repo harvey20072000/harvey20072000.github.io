@@ -1,5 +1,31 @@
 {
+  "coding": [
+    {
+      "id": "coding_0003",
+      "name": "Aws 容器介紹",
+      "url": "https://www.evernote.com/shard/s721/sh/7572815c-fd38-4199-9b45-6f9c7274dd8e/d9c60c28944da06cb6d94bc83c4416a9",
+      "date": "201906251210"
+    },
+    {
+      "id": "coding_0002",
+      "name": "Aws協助客戶 devOps",
+      "url": "https://www.evernote.com/shard/s721/sh/efc58e1e-6dfb-4729-a4f0-8db5c2d5913a/96abaf13fc595a906a334aaec121d43d",
+      "date": "201906251200"
+    },
+    {
+      "id": "coding_0001",
+      "name": "Aws Fargate",
+      "url": "https://www.evernote.com/shard/s721/sh/8f230b4a-1177-4093-b929-41b34691125f/2bdca4613e7d959918a059c0580e9e0c",
+      "date": "201906201930"
+    }
+  ],
   "articleReview": [
+    {
+      "id": "articleReview_0003",
+      "name": "文案分析",
+      "url": "https://www.evernote.com/shard/s721/sh/af7af55a-cf59-46aa-af2c-a0505689e816/47481654006f1abb35a5af1665925a1d",
+      "date": "201906211718"
+    },
     {
       "id": "articleReview_0002",
       "name": "斜槓時代高效讀書法",
@@ -13,12 +39,22 @@
       "date": "201906201222"
     }
   ],
-  "coding": [
+  "observation": [
+  ],
+  "investment": [
     {
-      "id": "coding_0001",
-      "name": "Aws Fargate",
-      "url": "https://www.evernote.com/shard/s721/sh/8f230b4a-1177-4093-b929-41b34691125f/2bdca4613e7d959918a059c0580e9e0c",
-      "date": "201906201930"
+      "id": "investment_0001",
+      "name": "一些觀念",
+      "url": "https://www.evernote.com/shard/s721/sh/0dd10a4e-dc40-48cd-94b2-d7fbd66af3f4/2e63b033e9fb1bc30867597f11c7beea",
+      "date": "201906251200"
+    }
+  ],
+  "entertainment": [
+    {
+      "id": "entertainment_0001",
+      "name": "20190622~0624 綠島遊",
+      "url": "https://www.evernote.com/shard/s721/sh/30e451d0-e4dc-44ff-a9be-3ab2ab8941da/1d40e94d510a98b6481eec2eaea45669",
+      "date": "201906251130"
     }
   ]
 }
