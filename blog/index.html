@@ -53,7 +53,7 @@
 				</div>
 			</div>
 			<!-- major content -->
-			<div id="mydashboard">
+			<div id="marketing">
 				<div class="container">
 					<div class="row divider">
 						<div class="3u recommendPlaylist">
@@ -61,7 +61,7 @@
 								<div class="mbox-style ">
 									<h2 class="title">推薦音樂清單</h2>
 									<div class="content">
-										<iframe width="100%" height="100%" src="https://www.youtube.com/embed/5qFWQQZ_wM0?list=PLiV5d2ALbjCbzkkgcnAzV5JEqtVKovQ3m" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										<iframe width="100%" height="20%" src="https://www.youtube.com/embed/5qFWQQZ_wM0?list=PLiV5d2ALbjCbzkkgcnAzV5JEqtVKovQ3m" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 									</div>
 									<p class="button-style2"><a href="https://www.youtube.com/playlist?list=PLiV5d2ALbjCbzkkgcnAzV5JEqtVKovQ3m">More Details</a></p>
 								</div>
@@ -134,8 +134,32 @@
 				loadArticles('all');
 				let $target = null;
 				
+				$.ajax({
+			        url: "resource/commons.json",
+			        //url: "https://harvey20072000.github.io/db.json", //TODO this url is for test only
+			        dataType: "json",
+			        success: function(commonDataset) {
+			            $.ajax({
+					        url: "resource/acticles.json",
+					        //url: "https://harvey20072000.github.io/db.json", //TODO this url is for test only
+					        dataType: "json",
+					        success: function(articleDataset) {
+								indexInit(commonDataset,articleDataset);
+					        },
+					        error: function(data) {
+					            alert('load acticles fail, please try again later (ˊ^ˋ)');
+					        }
+					    });
+			        },
+			        error: function(data) {
+			            alert('load common properties fail, please try again later (ˊ^ˋ)');
+			        }
+			    });
+			});
+			
+			function indexInit(commonDataset,articleDataset){
 				// articlesCount
-				$target = $('#mydashboard .articlesCount .content');
+				$target = $('#marketing .articlesCount .content');
 				for(var i in commonDataset['navigations']){
 					let each = commonDataset['navigations'][i];
 					if(each['isPublic']){
@@ -147,7 +171,7 @@
 				}
 				
 				// jsInteractsList
-				$target = $('#mydashboard .jsInteractsList .content');
+				$target = $('#marketing .jsInteractsList .content');
 				for(var i in all_jsInteracts){
 					let target = all_jsInteracts[i];
 					if(target.includes('.js')){ //'jsInteracts/paper_scissors_stone/index.html','jsInteract_paper_scissors_stone.js'
@@ -160,7 +184,7 @@
 				
 				// lastUpdateTime
 				let tempTime = moment('201001010000', 'YYYYMMDDHHmm');
-				$target = $('#mydashboard .lastUpdateTime .content');
+				$target = $('#marketing .lastUpdateTime .content');
 				for(var i in commonDataset['navigations']){
 					let each = commonDataset['navigations'][i];
 					if(each['isPublic']){
@@ -171,7 +195,7 @@
 					}
 				}
 				$target.append($('<p class="subtitle">{0}</p>'.format(tempTime.fromNow())));
-			});
+			}
 			
 		</script>
 	</body>
