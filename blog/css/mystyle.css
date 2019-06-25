@@ -85,3 +85,11 @@ h5 {
 h6 {
 	font-family: 'cwTeXYen',Arial,sans-serif;
 }
+
+#footer-wrapper .container{
+	border-top: 0.063em solid #D4D6D8;
+}
+#mydashboard .3u{
+	height: 250px;
+	overflow: hidden;
+}

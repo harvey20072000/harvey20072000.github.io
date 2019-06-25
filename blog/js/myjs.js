@@ -24,8 +24,10 @@ $(function() {
     });
 });
 
+var commonDataset = null;
+
 function setCommonProps(data) {
-    console.log(data);
+    commonDataset = data;
     // set title
     $('title').text(data['title']);
 
@@ -95,7 +97,7 @@ function setCommonProps(data) {
 }
 
 var all_jsInteracts = ['jsInteracts/paper_scissors_stone/index.html','jsInteract_paper_scissors_stone.js'];
-
+var articleDataset = null;
 
 // article loader
 function loadArticles(target){
@@ -104,6 +106,7 @@ function loadArticles(target){
         //url: "https://harvey20072000.github.io/db.json", //TODO this url is for test only
         dataType: "json",
         success: function(data) {
+			articleDataset = data;
             doLoadArticles(target,data);
         },
         error: function(data) {
@@ -114,6 +117,8 @@ function loadArticles(target){
 
 function doLoadArticles(target,data){
 	let targetArticles = data[target];
+	if(targetArticles == null)
+		return;
 	for(var i=0;i<6;i++){
 		$('#articles .row').append('<div class="2u articleColumn"><section><ul class="style2"></ul></section></div>');	
 	}
