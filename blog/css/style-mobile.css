@@ -341,6 +341,7 @@ article:first-child
 #marketing .mbox-style {
 	background: #333333;
 	border-radius: 5px;
+	text-align: center;
 }
 
 #marketing .mbox-style .content {

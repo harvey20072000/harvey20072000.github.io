@@ -165,7 +165,7 @@
 					if(each['isPublic']){
 						let target = articleDataset[each['linkTarget'].replace('.html','')];
 						if(target != null){
-							$target.append($('<p class="subtitle">{0}：{1}</p>'.format(each['name'],target.length)));
+							$target.append($('<p class="subtitle"><a href="{2}" style="text-decoration: none;color: #838383">{0}  ：  {1}</a></p>'.format(each['name'],target.length,each['linkTarget'])));
 						}
 					}
 				}
