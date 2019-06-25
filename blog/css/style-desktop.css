@@ -249,7 +249,7 @@
 #marketing .divider {
 	margin-bottom: 3em;
 	padding-bottom: 3em;
-	border-bottom: 0.063em solid #D4D6D8;
+	/*border-bottom: 0.063em solid #D4D6D8;*/
 }
 
 #marketing .title {

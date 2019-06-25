@@ -189,7 +189,7 @@
 					let each = commonDataset['navigations'][i];
 					if(each['isPublic']){
 						let target = articleDataset[each['linkTarget'].replace('.html','')];
-						if(target != null && target.length > 0 && tempTime.isBefore(target[0]['date'], 'YYYYMMDDHHmm')){
+						if(target != null && target.length > 0 && parseFloat(tempTime.format('X')) < parseFloat(moment(target[0]['date'], 'YYYYMMDDHHmm').format('X'))){
 							tempTime = moment(target[0]['date'], 'YYYYMMDDHHmm');
 						}
 					}
