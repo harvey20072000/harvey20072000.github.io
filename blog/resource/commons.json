@@ -1,7 +1,7 @@
 {
-  "title": "尬斯劉　部落格",
+  "title": "尬斯劉 部落格",
   "logo": {
-    "html": "<h1><a href=\"index.html\"><img height=\"3.2em\" src=\"images/favicon2.png\"/>尬斯劉<small> 的 </small>部落格</a></h1><p>Enjoy life. Be free.</p>"
+    "html": "<h1><a href=\"index.html\"><img height=\"30px\" src=\"images/favicon2.png\"/>尬斯劉<small style=\"font-size:10px;\"> 的 </small>部落格</a></h1><p>Enjoy life. Be free.</p>"
   },
   "navigations": [
     {
