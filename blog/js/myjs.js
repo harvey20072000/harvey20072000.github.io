@@ -31,10 +31,12 @@ function setCommonProps(data) {
     // set title
     $('title').text(data['title']);
 
-    // set logo
+    // set logo(pc)
     $('#logo').html(data['logo']['html']);
+	// set logo(mobile)
+	$('#titleBar span.title').html(data['logo']['html']);
 
-    // set nav
+    // set nav(pc)
     let $ul = $('#nav ul');
     for (var i in data['navigations']) {
         let eachNav = data['navigations'][i];
@@ -46,6 +48,22 @@ function setCommonProps(data) {
             $li.appendTo($ul);
         }
     }
+	// set nav(mobile)
+	let $nav = $('<nav></nav>');
+	$('#navPanel > div').append($nav);
+    for (var i in data['navigations']) {
+        let eachNav = data['navigations'][i];
+        if (eachNav['isPublic']) {
+			let $a = $('<a class="link depth-0" href="{0}" style="cursor: pointer; display: block; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><span class="indent-0"></span>{1}</a>'.format(eachNav['linkTarget'], eachNav['name']));
+			/*
+			if(window.location.pathname.includes(eachNav['linkTarget'])){
+				$a.addClass('current_page_item');	
+			}
+			*/
+            $a.appendTo($nav);
+        }
+    }
+	
 
     // set footers
     let footersData = data['footers'];

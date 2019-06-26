@@ -104,7 +104,7 @@ li > ul{
 	display: none;
 }
 
-ul.style1 .toggle{
+ul.style1 .slidebar{
 	cursor: pointer;
 	font-wight: 300;
 	font-size: 20px;
