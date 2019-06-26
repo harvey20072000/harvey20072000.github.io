@@ -13,7 +13,7 @@ $(function() {
 	
     $.ajax({
         url: "resource/commons.json",
-        //url: "https://harvey20072000.github.io/db.json", //TODO this url is for test only
+        //url: "https://harvey20072000.github.io/blog/resource/commons.json", //TODO this url is for test only
         dataType: "json",
         success: function(data) {
             setCommonProps(data);
@@ -103,7 +103,7 @@ var articleDataset = null;
 function loadArticles(target){
 	$.ajax({
         url: "resource/acticles.json",
-        //url: "https://harvey20072000.github.io/db.json", //TODO this url is for test only
+        //url: "https://harvey20072000.github.io/blog/resource/acticles.json", //TODO this url is for test only
         dataType: "json",
         success: function(data) {
 			articleDataset = data;
@@ -134,3 +134,5 @@ function doLoadArticles(target,data){
 		$ul.append($li);
 	}
 }
+
+

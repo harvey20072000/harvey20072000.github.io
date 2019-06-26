@@ -97,3 +97,16 @@ h6 {
 	height: 250px;
 	overflow: hidden;
 }
+
+li > ul{
+	margin-top: 5%;
+	margin-left: 10%;
+	display: none;
+}
+
+ul.style1 .toggle{
+	cursor: pointer;
+	font-wight: 300;
+	font-size: 20px;
+}
+
