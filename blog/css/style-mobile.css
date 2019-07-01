@@ -214,6 +214,8 @@ article:first-child
 /* Sidebar1 */
 
 #sidebar1 {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
 }
 
 #sidebar1 h2 {
@@ -239,6 +241,8 @@ article:first-child
 /* Sidebar2 */
 
 #sidebar2 {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
 }
 
 #sidebar2 h2 {
