@@ -153,4 +153,4 @@ function doLoadArticles(target,data){
 	}
 }
 
-
+// TODO pagination & <li> inline & article content add '#' as tag for search function

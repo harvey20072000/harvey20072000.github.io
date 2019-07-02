@@ -113,3 +113,8 @@ ul.style1 .slidebar{
 .paragraph{
 	font-size: 15px;
 }
+
+.articleColumn .style2{
+	padding-left: 1.87em;
+	padding-right: 1.87em;
+}
