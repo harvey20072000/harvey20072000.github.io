@@ -22,6 +22,15 @@ $(function() {
             alert('load common properties fail, please try again later (ˊ^ˋ)');
         }
     });
+	
+	$(function(){
+		setTimeout(function(){
+			let $div = $("#skel-panels-defaultWrapper");
+			$div.css("height","0%");
+			$div.parent("div").next().css("height","0%");
+		},100);
+	});
+	
 });
 
 var commonDataset = null;
