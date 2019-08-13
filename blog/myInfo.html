@@ -123,7 +123,7 @@
 										<div class="container">
 											<div class="row">
 												<div class="3u">
-													<img src="images/profile.jpg" alt="" width="70%" style="border-radius:55px">
+													<center><img src="images/profile.jpg" alt="" width="70%" style="border-radius:55px"></center>
 												</div>
 												<div class="5u">
 													<table style="font-size:20px;font-weight:500;width:100%;">
@@ -155,7 +155,7 @@
 										<div class="container">
 											<div class="row">
 												<div class="3u">
-													<img src="images/mindcraft.png" alt="" width="70%" style="/*border-radius:55px*/">
+													<center><img src="images/mindcraft.png" alt="" width="90%" style="/*border-radius:55px*/"></center>
 												</div>
 												<div class="5u">
 													<table style="font-size:20px;font-weight:500;width:100%;">
@@ -188,7 +188,7 @@
 										<div class="container">
 											<div class="row">
 												<div class="3u">
-													<img src="images/DOTS.png" alt="" width="100%" style="/*border-radius:55px*/">
+													<center><img src="images/DOTS.png" alt="" width="100%" style="/*border-radius:55px*/"></center>
 												</div>
 												<div class="5u">
 													<table style="font-size:20px;font-weight:500;width:100%;">
@@ -205,7 +205,7 @@
 															<td style="">Spring Boot+Cloud</td>
 														</tr>
 													</table>
-													<p class="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;此系統是用Spring Boot為基底來開發，目前是使用Postgres當DB，並以微服務的方式做模組拆分；目前已經與LINE、FB做串接，能夠針對不同使用者族群做分眾發訊息，也能管理FB粉專，系統也會定時自行分析資料，以優化分眾發訊息機制，並可由管理後台統一管理。</p>
+													<p class="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;此系統是用Spring Boot為基底來開發，目前是使用Postgre當DB，並以微服務的方式做模組拆分；目前已經與LINE、FB做串接，能夠針對不同使用者族群做分眾發訊息，也能管理FB粉專，系統也會定時自行分析資料，以優化分眾發訊息機制，並可由管理後台統一管理。</p>
 													<p class="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;小弟我一開始只負責LINE、FB模組的建立，後來協助開發核心模組，甚至主導此專案的GitFlow，吸收增進不少維運觀念技巧，是個讓我實力突飛猛進的系統XD</p>
 												</div>
 											</div>
@@ -217,9 +217,55 @@
 								<section>
 									<div class="post">
 										<h2>自然語意回覆系統</h2>
-										<p><a href="#"><img src="images/pics03.jpg" alt=""></a><br>
-											Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed blandit. Phasellus pellentesque, ante nec iaculis dapibus, eros justo auctor lectus, a lobortis lorem mauris quis nunc. Praesent pellentesque facilisis elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. In hac habitasse platea dictumst. Nullam id ante eget dui vulputate aliquam. Pellentesque erat erat, tincidunt in, eleifend accumsan, malesuada eget, augue. Suspendisse sit amet tellus in eros bibendum condimentum. Vestibulum suscipit volutpat nulla. Maecenas pede nisl, elementum eu ornare.</p>
-										<p class="button-style3"><a href="#">Read Full Article</a></p>
+										<div class="container">
+											<div class="row">
+												<div class="3u">
+													<center><img src="images/NLP03.jpg" alt="" width="100%" style="border-radius:40px"></center>
+												</div>
+												<div class="5u">
+													<table style="font-size:20px;font-weight:500;width:100%;">
+														<tr style="height:35px;padding-top:20%;">
+															<td style="width:30%">主要功能</td>
+															<td style="">自然語言分析回覆</td>
+														</tr>
+														<tr style="height:35px;">
+															<td>使用架構</td>
+															<td style="">Spring MVC</td>
+														</tr>
+													</table>
+													<p class="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;此系統分成兩部分，DataCenter跟Controller，DataCenter負責資料爬蟲跟彙整存入DB，Controller則是依使用者請求的相關資訊來給予相對應的回覆(ex:問天氣就答天氣狀況、問樂透就答樂透號碼...等)，並支援反問以獲得完整資訊(使用者輸入語句缺乏某些關鍵要素時)、上下文(ex:先問台北市天氣，再輸入"那台南呢"會自動回覆台南天氣)，架構設計上極度彈性，能動態更動不同角色之用戶問同樣問句時所得到的回應(ex:兆豐使用者問匯率會得到兆豐銀行的匯率，其他使用者問匯率會得到目前最佳匯率)。</p>
+													<p class="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;小弟的程式職涯便是從小小的DataCenter開始，建立基礎程式觀念和coding style、認識spring的基礎功能應用，後來便支援Controller相關開發(個人助理功能，設定鬧鐘、提醒、行事曆等)。</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="infoswitch project-ShiftArrangementSystem" style="display:none">
+								<section>
+									<div class="post">
+										<h2>自動排班系統</h2>
+										<div class="container">
+											<div class="row">
+												<div class="3u">
+													<center><img src="images/ShiftArrangementSystem01.jpg" alt="" width="70%" style="border-radius:40px"></center>
+												</div>
+												<div class="5u">
+													<table style="font-size:20px;font-weight:500;width:100%;">
+														<tr style="height:35px;padding-top:20%;">
+															<td style="width:30%">主要功能</td>
+															<td style="">透過客製化規則自動產出排班表</td>
+														</tr>
+														<tr style="height:35px;">
+															<td>系統類別</td>
+															<td style="">JAVA桌面應用程式</td>
+														</tr>
+													</table>
+													<p class="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;此系統是幫朋友所在的動物醫院寫的，意在幫忙解決主管排班耗時費神的情況。</p>
+													<p class="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;開發時，透過與排班人員的詳細對談，了解該部門的排班特性和規則，並設計出適當的架構及演算法，透過資源檔的簡易設定，便能生成符合該部門需求的排班表。</p>
+												</div>
+											</div>
+										</div>
 									</div>
 								</section>
 							</div>
@@ -230,7 +276,7 @@
 										<div class="container">
 											<div class="row">
 												<div class="3u">
-													<img src="images/dance.png" alt="" width="70%" style="border-radius:40px">
+													<center><img src="images/dance.png" alt="" width="70%" style="border-radius:40px"></center>
 												</div>
 												<div class="5u">
 													<table style="font-size:20px;font-weight:500;width:100%;">
@@ -296,6 +342,56 @@
 													<p class="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;《圓桌密令》以亞瑟王的故事為基底做成的密室，因為熟悉桌遊「阿瓦隆」，因此對背景故事不陌生，新奇的大型道具令人驚豔。最後成功通關~</p>
 													<p class="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;《籠中鳥》恐怖氣氛很棒，特殊的劇情還有場地設計也是令人非常驚豔，也是玩到第一個有實際NPC的密室，最後成功通關~</p>
 													<p class="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;《教室1968》主題雖然恐怖，但解謎過程中一點都不恐怖，而且道具不太精良，常有機關觸發上的問題，沒過關，也不推這個密室</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="infoswitch interest-WatchMovie" style="display:none">
+								<section>
+									<div class="post">
+										<h2>看電影</h2>
+										<div class="container">
+											<div class="row">
+												<div class="8u">
+													<p class="paragraph">&nbsp;&nbsp;&nbsp;&nbsp;推薦電影清單</p>
+												</div>
+											</div>
+											<div class="row">
+												<div class="2u">
+													<p class="paragraph"><center>神鬼戰士</center></p>
+													<a href="https://zh.wikipedia.org/wiki/%E8%A7%92%E6%96%97%E5%A3%AB_(%E7%94%B5%E5%BD%B1)" target="_blank"><img src="images/WatchMovie-Gladiator.jpg" alt="" width="100%" style="/*border-radius:55px*/"></a>
+												</div>
+												<div class="2u">
+													<p class="paragraph"><center>大法官</center></p>
+													<a href="https://zh.wikipedia.org/wiki/%E5%A4%A7%E6%B3%95%E5%AE%98_(%E9%9B%BB%E5%BD%B1)" target="_blank"><img src="images/WatchMovie-The_Judge.jpg" alt="" width="100%" style="/*border-radius:55px*/"></a>
+												</div>
+												<div class="2u">
+													<p class="paragraph"><center>駭客任務三部曲</center></p>
+													<a href="https://zh.wikipedia.org/wiki/%E9%BB%91%E5%AE%A2%E5%B8%9D%E5%9B%BD" target="_blank"><img src="images/WatchMovie-The_Matrix.jpg" alt="" width="100%" style="/*border-radius:55px*/"></a>
+												</div>
+												<div class="2u">
+													<p class="paragraph"><center>魔戒電影三部曲</center></p>
+													<a href="https://zh.wikipedia.org/wiki/%E9%AD%94%E6%88%92%E9%9B%BB%E5%BD%B1%E4%B8%89%E9%83%A8%E6%9B%B2" target="_blank"><img src="images/WatchMovie-The_Lord_of_the_Rings.jpg" alt="" width="100%" style="/*border-radius:55px*/"></a>
+												</div>
+											</div>
+											<div class="row">
+												<div class="2u">
+													<p class="paragraph"><center>阿凡達</center></p>
+													<a href="https://zh.wikipedia.org/wiki/%E9%98%BF%E5%87%A1%E8%BE%BE" target="_blank"><img src="images/WatchMovie-Avatar.jpg" alt="" width="100%" style="/*border-radius:55px*/"></a>
+												</div>
+												<div class="2u">
+													<p class="paragraph"><center>全面啟動</center></p>
+													<a href="https://zh.wikipedia.org/wiki/%E5%85%A8%E9%9D%A2%E5%95%9F%E5%8B%95" target="_blank"><img src="images/WatchMovie-Inception.jpg" alt="" width="100%" style="/*border-radius:55px*/"></a>
+												</div>
+												<div class="2u">
+													<p class="paragraph"><center>環太平洋</center></p>
+													<a href="https://zh.wikipedia.org/wiki/%E7%8E%AF%E5%A4%AA%E5%B9%B3%E6%B4%8B_(%E7%94%B5%E5%BD%B1)" target="_blank"><img src="images/WatchMovie-Pacific_Rim.jpg" alt="" width="100%" style="/*border-radius:55px*/"></a>
+												</div>
+												<div class="2u">
+													<p class="paragraph"><center>復仇者聯盟4</center></p>
+													<a href="https://zh.wikipedia.org/wiki/%E5%BE%A9%E4%BB%87%E8%80%85%E8%81%AF%E7%9B%9F%EF%BC%9A%E7%B5%82%E5%B1%80%E4%B9%8B%E6%88%B0" target="_blank"><img src="images/WatchMovie-Avengers_End_Game.jpg" alt="" width="100%" style="/*border-radius:55px*/"></a>
 												</div>
 											</div>
 										</div>
