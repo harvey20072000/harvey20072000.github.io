@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Signature Download</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/html2canvas.js"></script>
+		<link rel="stylesheet" href="css/all-fonts.css" />
+		<style>
+		.section{
+			margin-bottom: 10px;
+		}
+		
+		.block{
+			display: inline-block;
+		}
+		
+		.display{
+			font-weight: 400; 
+			background:rgba(0,0,0,0);
+		}
+		
+		.clickable{
+			cursor: pointer;
+		}
+		
+		.alignTop{
+			vertical-align: top;
+		}
+
+		.selection-types{
+			font-size: 30px;
+			width: 200px;
+			height: 70px;
+			border: 1px #000000 solid;
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+		
+		.selection-fonts{
+			font-size: 30px;
+			width: 400px;
+		}
+		
+		.selected{
+			background: #45bdde;
+		}
+		
+		.invisible{
+			display: none;
+		}
+		
+		.resizable-y{
+			resize: vertical;
+		}
+		
+		</style>
+		<script>
+			var types = ['aggressive','analytical','careful','changeable','controlled','creative','easygoing','efficient','elegant','frank','friendly','gentle','hardworking','humble','humorous','independent','leadership','lively','logical','neat','practical','venturesome'];
+			var sectionsCount = 3;
+			var displayPadding = '20px';
+			var targetName = 'Default Signature';
+			var displayColor = '#000000';
+			var displayFontSize = '100px';
+			
+			$(function(){
+				// init by url params
+				let currentUrl = new URL(window.location.href);
+				let params = currentUrl.searchParams;
+				let paramKey = null;
+				if(params.has((paramKey = 'sc')))
+					sectionsCount = parseInt(params.get(paramKey));
+				if(params.has((paramKey = 'pd')))
+					displayPadding = params.get(paramKey)+'px';
+				if(params.has((paramKey = 'dc')))
+					displayColor = '#'+params.get(paramKey);
+				if(params.has((paramKey = 'fs')))
+					displayFontSize = params.get(paramKey)+'px';
+				if(params.has((paramKey = 'tn')))
+					targetName = params.get(paramKey);
+					
+				// create sections DOMs
+				let $parent = $('body');
+				for(i=0;i<sectionsCount;i++){
+					createSection($parent);
+				}
+				
+				// use ajax to get fontsJsons to init .selection-fonts
+				$.ajax({
+			        url: "resource/fonts.json",
+			        //url: "https://harvey20072000.github.io/blog/resource/fonts.json", //TODO this url is for test only
+			        dataType: "json",
+			        success: function(data) {
+						let $fonts = $('.section .selection .selection-fonts');
+			            for(var i in data){
+							let each = data[i];
+							let name = each.name;
+							let types = each.type;
+							let $opt = $('<option style="font-family:'+name+';" value="'+name+'">'+name+'</option>');
+							let typesArray = types.split(',');
+							for(var j in typesArray){
+								let t = typesArray[j];
+								if(t != null && t != '')
+									$opt.addClass('type-'+t);
+							}
+							$fonts.append($opt);
+						}
+			        },
+			        error: function(data) {
+			            alert('load fonts fail, please try again later (ˊ^ˋ)');
+			        }
+			    });
+				
+				// make types into select-options
+				for(var i in types){
+					let val = types[i];
+					let $opt = $('<div></div>');
+					$opt.text(val);
+					$opt.attr('value',val);
+					$opt.addClass('clickable');
+					$opt.click(function(){
+						let $fonts = $(this).closest('.selection').find('.selection-fonts');
+						let tempTypes = null;
+						if($(this).hasClass('selected')){
+							$(this).removeClass('selected');
+							if((tempTypes = $fonts.attr('selectedTypes')) != null)
+								$fonts.attr('selectedTypes',(tempTypes = tempTypes.replace(val+',','')));
+						}else{
+							$(this).addClass('selected');
+							if((tempTypes = $fonts.attr('selectedTypes')) == null)
+								$fonts.attr('selectedTypes',(tempTypes = val+','));
+							else
+								$fonts.attr('selectedTypes',(tempTypes = tempTypes+val+','));
+						}
+						// let .selection-fonts show the selected types of font
+						// use tempTypes to decide which font to show
+						$fonts.find('option').show();
+						let tempTypesArray = tempTypes.split(',');
+						for(var i in tempTypesArray){
+							if(tempTypesArray[i] == null || tempTypesArray[i] == '')
+								continue;
+							let eachTypeClass = 'type-'+tempTypesArray[i];
+							$fonts.find('option').each(function(){
+								if(!$(this).hasClass(eachTypeClass))
+									$(this).hide();
+							});
+						}
+						$fonts.trigger('change');
+					});
+					$('.section .selection .selection-types').append($opt);
+				}
+				$('.selection-fonts').on('change',function(){
+					// get .display show the selected signature of targetName
+					let $display = $(this).closest('.section').find('.display');
+					$display.css('font-family',$(this).val());
+					$display.css('font-size',displayFontSize);
+					$display.css('padding',displayPadding);
+					$display.css('color',displayColor);
+					$display.text(targetName);
+				});
+			});
+			
+			function createSection($parent){
+				let $div = $('<div class="section">'+
+								'<div class="block selection">'+
+									'<div class="block selection-types alignTop resizable-y"></div>'+
+									'<select class="selection-fonts alignTop"></select>'+
+								'</div><br>'+
+								'<div class="block display clickable" onclick="downloadSignature(this)"></div>'+
+							'</div>');
+				$parent.append($div);
+			}
+			
+			function completeInputtingName(inputDom){
+				targetName = $(inputDom).val();
+			}
+			
+			function downloadSignature(targetDom){
+				html2canvas(targetDom,{ allowTaint: true, useCORS: true, backgroundColor: "rgba(0,0,0,0)", removeContainer: true }).then(function(canvas) {
+			        saveAs(canvas.toDataURL(), targetName+'.png');
+			    });
+			}
+			
+			function saveAs(uri, filename) {
+			    var link = document.createElement('a');
+			    if (typeof link.download === 'string') {
+			        link.href = uri;
+			        link.download = filename;
+
+			        //Firefox requires the link to be in the body
+			        document.body.appendChild(link);
+
+			        //simulate click
+			        link.click();
+
+			        //remove the link when done
+			        document.body.removeChild(link);
+			    } else {
+			        window.open(uri);
+			    }
+			}
+		</script>
+	</head><body class="homepage">
+	<input style="margin-bottom: 10px; font-size: 30px;" onfocusout="completeInputtingName(this)" placeholder="Type Name...">
+	
+	<!-- demo DOMs
+	<div id="capture" class="signature" style="display:inline-block; padding: 30px; color: #000; font-weight: 400; background:rgba(0,0,0,0); font-size: 100px; font-family: Gisella-lgZVV" title="click me to download">
+	   Robert Lin
+	</div>
+	<div id="show" style="background:red; height: 500px;"></div>
+	-->
+	<script> 
+	/*
+	$(function(){
+		$('#capture').click(function(){
+			html2canvas(document.querySelector('#capture'),{ allowTaint: true, useCORS: true, backgroundColor: "rgba(0,0,0,0)", removeContainer: true, x: 0, y: 50 }).then(function(canvas) {
+				document.querySelector('#show').appendChild(canvas);
+		        saveAs(canvas.toDataURL(), 'file-name.png');
+		    });
+		});
+	});
+	*/
+	
+	</script>
+	</body>
+</html>

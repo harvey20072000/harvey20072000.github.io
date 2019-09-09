@@ -1,0 +1,229 @@
+@font-face {
+  font-family: 'JustSignature-92w7';
+  src: url('fonts/JustSignature-92w7.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Halimun-W7jn';
+  src: url('fonts/Halimun-W7jn.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Tomatoes-O8L8';
+  src: url('fonts/Tomatoes-O8L8.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'ShoppingScriptDemo-rGL7';
+  src: url('fonts/ShoppingScriptDemo-rGL7.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Marthin-rg2vK';
+  src: url('fonts/Marthin-rg2vK.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Cervanttis';
+  src: url('fonts/Cervanttis.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Fellycia-1GPlZ';
+  src: url('fonts/Fellycia-1GPlZ.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Aksana-8KnB';
+  src: url('fonts/Aksana-8KnB.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Gisella-lgZVV';
+  src: url('fonts/Gisella-lgZVV.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'AsianSkylineDemoRegular-ggL5';
+  src: url('fonts/AsianSkylineDemoRegular-ggL5.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'AcrossTheRoad-Gn0P';
+  src: url('fonts/AcrossTheRoad-Gn0P.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'BlueFonte-2O7Md';
+  src: url('fonts/BlueFonte-2O7Md.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Darkline-owBMq';
+  src: url('fonts/Darkline-owBMq.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'CanelaBarkPersonalUse-460D';
+  src: url('fonts/CanelaBarkPersonalUse-460D.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Jelytta-pvlv';
+  src: url('fonts/Jelytta-pvlv.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'SaintHilton-ywByq';
+  src: url('fonts/SaintHilton-ywByq.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'ChinalLightPersonalUseOnly-xVR8';
+  src: url('fonts/ChinalLightPersonalUseOnly-xVR8.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Halbrein-mrOG';
+  src: url('fonts/Halbrein-mrOG.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Notera2PersonalUseOnlyThin-pV5D';
+  src: url('fonts/Notera2PersonalUseOnlyThin-pV5D.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Sattersoon-8M8en';
+  src: url('fonts/Sattersoon-8M8en.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Hiliana-VGOWx';
+  src: url('fonts/Hiliana-VGOWx.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'AsemKandis-JDrn';
+  src: url('fonts/AsemKandis-JDrn.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'EthernalLightPersonalUse-rKjp';
+  src: url('fonts/EthernalLightPersonalUse-rKjp.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'BestDeals';
+  src: url('fonts/BestDeals.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Belinda-Rx43';
+  src: url('fonts/Belinda-Rx43.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'WhiteAngelica-ln9e';
+  src: url('fonts/WhiteAngelica-ln9e.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Katrine-9DX2';
+  src: url('fonts/Katrine-9DX2.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'PaulSignature-WEJY';
+  src: url('fonts/PaulSignature-WEJY.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Gallatone-l24Z';
+  src: url('fonts/Gallatone-l24Z.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'MedishScriptPersonalUseOnly-48eW';
+  src: url('fonts/MedishScriptPersonalUseOnly-48eW.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'SilverPen-VlE0';
+  src: url('fonts/SilverPen-VlE0.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Entreaty-5Y7V';
+  src: url('fonts/Entreaty-5Y7V.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'HenshinScriptPersonalUse';
+  src: url('fonts/HenshinScriptPersonalUse.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'TallCasatThinPersonalUse-lW8Z';
+  src: url('fonts/TallCasatThinPersonalUse-lW8Z.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Countryside-YdKj';
+  src: url('fonts/Countryside-YdKj.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'StylishCalligraphyDemo';
+  src: url('fonts/StylishCalligraphyDemo.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'BiteChocolate-2RGl';
+  src: url('fonts/BiteChocolate-2RGl.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Southampton-MRqp';
+  src: url('fonts/Southampton-MRqp.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'NoteraPersonalUseOnly-wxJ9';
+  src: url('fonts/NoteraPersonalUseOnly-wxJ9.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'ContureScriptPersonalUse-8WBz';
+  src: url('fonts/ContureScriptPersonalUse-8WBz.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'TheHeartofEverythingDemo';
+  src: url('fonts/TheHeartofEverythingDemo.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'BadUnicornDEMO';
+  src: url('fonts/BadUnicornDEMO.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'MfWeddingBells';
+  src: url('fonts/MfWeddingBells.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'AutografPersonalUseOnly-mOBm';
+  src: url('fonts/AutografPersonalUseOnly-mOBm.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'SignericaMedium-RXOo';
+  src: url('fonts/SignericaMedium-RXOo.ttf') format('opentype')
+}
+
+@font-face {
+  font-family: 'TheHillsPersonalUseOnly-mrdv';
+  src: url('fonts/TheHillsPersonalUseOnly-mrdv.ttf') format('opentype')
+}
