@@ -227,3 +227,8 @@
   font-family: 'TheHillsPersonalUseOnly-mrdv';
   src: url('fonts/TheHillsPersonalUseOnly-mrdv.ttf') format('opentype')
 }
+
+@font-face {
+  font-family: 'TheHeartMazeDemo';
+  src: url('fonts/TheHeartMazeDemo.ttf') format('opentype')
+}
