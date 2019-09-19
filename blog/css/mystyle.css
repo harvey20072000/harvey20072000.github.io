@@ -114,7 +114,17 @@ ul.style1 .slidebar{
 	font-size: 15px;
 }
 
-.articleColumn .style2{
-	padding-left: 1.87em;
+.articleColumn {
 	padding-right: 1.87em;
+  padding-bottom: 1.87em;
+}
+
+.articleColumn .title{
+  font-size: 17px;
+  text-decoration: none;
+  color: #8F8F8F;
+}
+
+.articleColumn .date{
+  color: #2A2A2A;
 }

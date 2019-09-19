@@ -146,19 +146,13 @@ function doLoadArticles(target,data){
 	let targetArticles = data[target];
 	if(targetArticles == null)
 		return;
-	for(var i=0;i<6;i++){
-		$('#articles .row').append('<div class="2u articleColumn"><section><ul class="style2"></ul></section></div>');	
-	}
 		
+    let $row = $('#articles .row');
 	for(var i in targetArticles){
 		let eachArticle = targetArticles[i];
-		let $ul = $('#articles .articleColumn:eq({0}) ul'.format(i % 6));
 		let articleTime = moment(eachArticle['date'], "YYYYMMDDHHmm").format('MMM DD HH:mm');
-		let $li = $('<li><p class="date"><b>{0}</b></p><p><a target="_blank" href="{1}"><b style="font-size:17px;">{2}</b></a></p></li>'.format(articleTime,eachArticle['url'],eachArticle['name']))
-		if($ul.find('li').length == 0){
-			$li.addClass('first');
-		}
-		$ul.append($li);
+		let $div = $('<div class="2u articleColumn"><p class="date"><b>{0}</b></p><p><a class="title" target="_blank" href="{1}"><b>{2}</b></a></p></div>'.format(articleTime,eachArticle['url'],eachArticle['name']))
+		$row.append($div);
 	}
 }
 
