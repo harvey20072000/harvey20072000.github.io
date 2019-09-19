@@ -88,7 +88,7 @@
 						<div class="3u lastUpdateTime">
 							<section>
 								<div class="mbox-style">
-									<h2 class="title">最後更新時間</h2>
+									<h2 class="title">最近更新文章</h2>
 									<div class="content">
 									</div>
 								</div>
@@ -137,12 +137,12 @@
 				
 				$.ajax({
 			        url: "resource/commons.json",
-			        //url: "https://harvey20072000.github.io/db.json", //TODO this url is for test only
+			        //url: "https://harvey20072000.github.io/blog/resource/commons.json", //TODO this url is for test only
 			        dataType: "json",
 			        success: function(commonDataset) {
 			            $.ajax({
 					        url: "resource/acticles.json",
-					        //url: "https://harvey20072000.github.io/db.json", //TODO this url is for test only
+					        //url: "https://harvey20072000.github.io/blog/resource/acticles.json", //TODO this url is for test only
 					        dataType: "json",
 					        success: function(articleDataset) {
 								indexInit(commonDataset,articleDataset);
@@ -183,19 +183,36 @@
 					$target.append($('<p class="subtitle">{0}</p>'.format(target)));
 				}
 				
-				// lastUpdateTime
+				// lastUpdateTime + 3 newest articles
 				let tempTime = moment('201001010000', 'YYYYMMDDHHmm');
 				$target = $('#marketing .lastUpdateTime .content');
+				let newestArticles = [];
 				for(var i in commonDataset['navigations']){
 					let each = commonDataset['navigations'][i];
 					if(each['isPublic']){
 						let target = articleDataset[each['linkTarget'].replace('.html','')];
-						if(target != null && target.length > 0 && parseFloat(tempTime.format('X')) < parseFloat(moment(target[0]['date'], 'YYYYMMDDHHmm').format('X'))){
-							tempTime = moment(target[0]['date'], 'YYYYMMDDHHmm');
+						if(target != null && target.length > 0){
+							for(var j = 0; j < 3; j++){
+								if(target[j] != null){
+									newestArticles.push($('<p class="subtitle" timestamp="{2}"><a href="{1}" style="text-decoration: none;color: #838383">{0}</a></p>'.format(target[j]['name'], target[j]['url'], target[j]['date'])));
+								}
+							}
+							if(parseFloat(tempTime.format('X')) < parseFloat(moment(target[0]['date'], 'YYYYMMDDHHmm').format('X')))
+								tempTime = moment(target[0]['date'], 'YYYYMMDDHHmm');
 						}
 					}
 				}
-				$target.append($('<p class="subtitle">{0}</p>'.format(tempTime.fromNow())));
+				newestArticles = newestArticles.sort(function (a, b) {
+					return a.attr('timestamp') > b.attr('timestamp') ? -1 : 1;
+				});
+				for(var i = 0; i < 3; i++){
+					if(newestArticles[i] != null){
+						$target.append(newestArticles[i]);
+					}
+				}
+				$target.append($('<br>'));
+				$target.append($('<hr>'));
+				$target.append($('<p class="subtitle">updated {0}</p>'.format(tempTime.fromNow())));
 			}
 			
 		</script>
