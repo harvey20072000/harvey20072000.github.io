@@ -146,9 +146,13 @@ function doLoadArticles(target,data){
 	let targetArticles = data[target];
 	if(targetArticles == null)
 		return;
-		
-    let $row = $('#articles .row');
+    
+    let $row = null;
 	for(var i in targetArticles){
+        if(i%6 == 0){
+            $row = $('<div class="row"></div>');
+            $('#articles .container').append($row);
+        }
 		let eachArticle = targetArticles[i];
 		let articleTime = moment(eachArticle['date'], "YYYYMMDDHHmm").format('MMM DD HH:mm');
 		let $div = $('<div class="2u articleColumn"><p class="date"><b>{0}</b></p><p><a class="title" target="_blank" href="{1}"><b>{2}</b></a></p></div>'.format(articleTime,eachArticle['url'],eachArticle['name']))
