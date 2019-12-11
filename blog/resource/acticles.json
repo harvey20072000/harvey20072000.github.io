@@ -1,6 +1,18 @@
 {
   "coding": [
     {
+      "id": "coding_00020",
+      "name": "HDFS介紹",
+      "url": "https://www.evernote.com/l/AtHC_HriPNxF4rrijUh4OnznvXCxFR2vTEI",
+      "date": "201912111443"
+    },
+    {
+      "id": "coding_00019",
+      "name": "Kafka介紹",
+      "url": "https://www.evernote.com/l/AtElQ5aWj_VG4LeI3_7hJ0ifjcDEITN5NsY",
+      "date": "201912111230"
+    },
+    {
       "id": "coding_00018",
       "name": "JVM《一》java類的載入機制",
       "url": "https://www.evernote.com/l/AtF5t-xccm9EurZiKuUIGg5xC1iTAd7F1vY",
